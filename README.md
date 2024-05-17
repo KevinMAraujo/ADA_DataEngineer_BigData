@@ -12,7 +12,7 @@ O objetivo deste trabalho é explorar as capacidades de arquiteturas de bancos d
 
 O diagrama das tabelas do banco de dados utilizado no projeto é mostrado a seguir:
 
-![Esquemático](images/tables_diagram highlighted.png)
+![Esquemático](images/tables_diagram_highlighted.png)
 
 As tabelas de dimensões de tempo incluem:
 - d_time
