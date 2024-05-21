@@ -1,0 +1,37 @@
+Table silver.d_accounts {
+  account_id uuid [pk]
+  status varchar(128)
+  account varchar(254) /*account_branch + account_check_digit + account_number */
+}
+
+Table silver.d_calendar {
+  ultimo_dia_mes date
+  month int
+  year int
+}
+
+Table silver.f_movements {
+  id bigint
+  account_id uuid
+  amount float
+  requested_at date
+  completed_at date
+  in_or_out varchar(128) /* in or out */
+  status varchar(128)
+  transaction_type varchar(10) /*pix ou transfer*/
+}
+Ref: silver.f_movements.account_id > silver.d_accounts.account_id
+Ref: silver.f_movements.requested_at > silver.d_calendar.ultimo_dia_mes
+Ref: silver.f_movements.completed_at > silver.d_calendar.ultimo_dia_mes
+
+
+table gold.agg_saldo_mensal{
+  account_id bigint
+	ultimo_dia_mes date
+  mes int
+  ano int
+	total_entrada float
+	total_saida float
+	saldo_final float
+  
+}
