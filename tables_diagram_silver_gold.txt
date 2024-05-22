@@ -29,8 +29,6 @@ table gold.agg_saldo_mensal{
   account_id bigint
   account varchar(254) /*account_branch + account_check_digit + account_number */
   ultimo_dia_mes date
-  mes int
-  ano int
   total_entrada float
   total_saida float
   saldo_final float
