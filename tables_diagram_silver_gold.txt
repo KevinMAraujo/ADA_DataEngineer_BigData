@@ -27,11 +27,12 @@ Ref: silver.f_movements.completed_at > silver.d_calendar.ultimo_dia_mes
 
 table gold.agg_saldo_mensal{
   account_id bigint
-	ultimo_dia_mes date
+  account varchar(254) /*account_branch + account_check_digit + account_number */
+  ultimo_dia_mes date
   mes int
   ano int
-	total_entrada float
-	total_saida float
-	saldo_final float
-  
+  total_entrada float
+  total_saida float
+  saldo_final float
+
 }
