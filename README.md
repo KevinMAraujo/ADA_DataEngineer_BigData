@@ -61,3 +61,6 @@ A camada Silver também passa por uma etapa de Data Quality, na qual algumas val
 - **Gold**: Nesta camada, é gerada a tabela com o Saldo Mensal da Conta.
 
 ![gold](images/tables_gold.png)
+
+
+> Os diagramas apresentados podem ser gerados no [dbdiagram.io](https://dbdiagram.io/home) usando o arquivo [tables_diagram_silver_gold.txt](./tables_diagram_silver_gold.txt).
