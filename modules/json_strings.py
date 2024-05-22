@@ -1,0 +1,396 @@
+# Databricks notebook source
+# Strings json para criação do schema dos campos atráves da StructType
+
+#### ao final é gerado uma lista de variaveis com todas as strings
+
+accounts = '''
+{
+    "fields":[
+        {
+            "metadata":{},
+            "name":"account_id",
+            "nullable":false,
+            "type":"long"
+        },{
+            "metadata":{},
+            "name":"customer_id",
+            "nullable":false,
+            "type":"long"
+        },{
+            "metadata":{},
+            "name":"created_at",
+            "nullable":true,
+            "type":"timestamp"
+        },{
+            "metadata":{},
+            "name":"status",
+            "nullable":true,
+            "type":"string"
+        },{
+            "metadata":{},
+            "name":"account_branch",
+            "nullable":false,
+            "type":"integer"
+        },{
+            "metadata":{},
+            "name":"account_check_digit",
+            "nullable":false,
+            "type":"integer"
+        },{
+            "metadata":{},
+            "name":"account_number",
+            "nullable":false,
+            "type":"integer"
+        }
+    ],
+    "type":"struct"
+}
+'''
+
+city = '''
+{
+    "fields":[
+        {
+            "metadata":{},
+            "name":"city",
+            "nullable":false,
+            "type":"string"
+        },{
+            "metadata":{},
+            "name":"state_id",
+            "nullable":false,
+            "type":"long"
+        },{
+            "metadata":{},
+            "name":"city_id",
+            "nullable":false,
+            "type":"long"
+        }
+    ],
+    "type":"struct"
+}
+'''
+
+country = '''
+{
+    "fields":[
+        {
+            "metadata":{},
+            "name":"country",
+            "nullable":false,
+            "type":"string"
+        },{
+            "metadata":{},
+            "name":"country_id",
+            "nullable":false,
+            "type":"long"
+        }
+    ],
+    "type":"struct"
+}
+'''
+
+customers = '''
+{
+    "fields":[
+        {
+            "metadata":{},
+            "name":"customer_id",
+            "nullable":false,
+            "type":"long"
+        },{
+            "metadata":{},
+            "name":"first_name",
+            "nullable":true,
+            "type":"string"
+        },{
+            "metadata":{},
+            "name":"last_name",
+            "nullable":true,
+            "type":"string"
+        },{
+            "metadata":{},
+            "name":"customer_city",
+            "nullable":true,
+            "type":"long"
+        },{
+            "metadata":{},
+            "name":"cpf",
+            "nullable":true,
+            "type":"long"
+        },{
+            "metadata":{},
+            "name":"country_name",
+            "nullable":true,
+            "type":"string"
+        }
+    ],
+    "type":"struct"
+}
+'''
+
+d_month = ''' 
+{
+    "fields":[
+        {
+            "metadata":{},
+            "name":"month_id",
+            "nullable":false,
+            "type":"integer"
+        },{
+            "metadata":{},
+            "name":"action_month",
+            "nullable":true,
+            "type":"integer"
+        }
+    ],
+    "type":"struct"
+}
+''' 
+
+d_time = ''' 
+{
+    "fields":[
+        {
+            "metadata":{},
+            "name":"time_id",
+            "nullable":false,
+            "type":"integer"
+        },{
+            "metadata":{},
+            "name":"action_timestamp",
+            "nullable":true,
+            "type":"timestamp"
+        },{
+            "metadata":{},
+            "name":"week_id",
+            "nullable":true,
+            "type":"integer"
+        },{
+            "metadata":{},
+            "name":"month_id",
+            "nullable":true,
+            "type":"integer"
+        },{
+            "metadata":{},
+            "name":"year_id",
+            "nullable":true,
+            "type":"integer"
+        },{
+            "metadata":{},
+            "name":"weekday_id",
+            "nullable":true,
+            "type":"integer"
+        }
+    ],
+    "type":"struct"
+}
+'''  
+
+d_week = ''' 
+{
+    "fields":[
+        {
+            "metadata":{},
+            "name":"week_id",
+            "nullable":false,
+            "type":"integer"
+        },{
+            "metadata":{},
+            "name":"action_week",
+            "nullable":true,
+            "type":"integer"
+        }
+    ],
+    "type":"struct"
+}
+'''  
+
+d_weekday = '''
+{
+    "fields":[
+        {
+            "metadata":{},
+            "name":"weekday_id",
+            "nullable":false,
+            "type":"integer"
+        },{
+            "metadata":{},
+            "name":"action_weekday",
+            "nullable":true,
+            "type":"integer"
+        }
+    ],
+    "type":"struct"
+}
+'''  
+
+d_year = ''' 
+{
+    "fields":[
+        {
+            "metadata":{},
+            "name":"year_id",
+            "nullable":false,
+            "type":"integer"
+        },{
+            "metadata":{},
+            "name":"action_year",
+            "nullable":true,
+            "type":"integer"
+        }
+    ],
+    "type":"struct"
+}
+'''  
+
+pix_movements = ''' 
+{
+    "fields":[
+        {
+            "metadata":{},
+            "name":"id",
+            "nullable":false,
+            "type":"long"
+        },{
+            "metadata":{},
+            "name":"account_id",
+            "nullable":false,
+            "type":"long"
+        },{
+            "metadata":{},
+            "name":"pix_amount",
+            "nullable":true,
+            "type":"double"
+        },{
+            "metadata":{},
+            "name":"pix_requested_at",
+            "nullable":true,
+            "type":"integer"
+        },{
+            "metadata":{},
+            "name":"pix_completed_at",
+            "nullable":true,
+            "type":"string"
+        },{
+            "metadata":{},
+            "name":"status",
+            "nullable":true,
+            "type":"string"
+        },{
+            "metadata":{},
+            "name":"in_or_out",
+            "nullable":true,
+            "type":"string"
+        }
+    ],
+    "type":"struct"
+}
+'''  
+
+state = ''' 
+{
+    "fields":[
+        {
+            "metadata":{},
+            "name":"state",
+            "nullable":true,
+            "type":"string"
+        },{
+            "metadata":{},
+            "name":"country_id",
+            "nullable":false,
+            "type":"long"
+        },{
+            "metadata":{},
+            "name":"state_id",
+            "nullable":false,
+            "type":"string"
+        }
+    ],
+    "type":"struct"
+}
+''' 
+
+transfer_ins = ''' 
+{
+    "fields":[
+        {
+            "metadata":{},
+            "name":"id",
+            "nullable":false,
+            "type":"long"
+        },{
+            "metadata":{},
+            "name":"account_id",
+            "nullable":true,
+            "type":"long"
+        },{
+            "metadata":{},
+            "name":"amount",
+            "nullable":true,
+            "type":"double"
+        },{
+            "metadata":{},
+            "name":"transaction_requested_at",
+            "nullable":true,
+            "type":"integer"
+        },{
+            "metadata":{},
+            "name":"transaction_completed_at",
+            "nullable":true,
+            "type":"string"
+        },{
+            "metadata":{},
+            "name":"status",
+            "nullable":true,
+            "type":"string"
+        }
+    ],
+    "type":"struct"
+}
+'''  
+
+transfer_outs = ''' 
+{
+    "fields":[
+        {
+            "metadata":{},
+            "name":"id",
+            "nullable":false,
+            "type":"long"
+        },{
+            "metadata":{},
+            "name":"account_id",
+            "nullable":true,
+            "type":"long"
+        },{
+            "metadata":{},
+            "name":"amount",
+            "nullable":true,
+            "type":"double"
+        },{
+            "metadata":{},
+            "name":"transaction_requested_at",
+            "nullable":true,
+            "type":"integer"
+        },{
+            "metadata":{},
+            "name":"transaction_completed_at",
+            "nullable":true,
+            "type":"string"
+        },{
+            "metadata":{},
+            "name":"status",
+            "nullable":true,
+            "type":"string"
+        }
+    ],
+    "type":"struct"
+}
+''' 
+
+
+json_str_list = [accounts, city, country, customers, 
+               d_month, d_time, d_week, d_weekday, d_year, 
+               pix_movements, state, transfer_ins, transfer_outs]
