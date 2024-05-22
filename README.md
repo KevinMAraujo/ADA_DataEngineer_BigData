@@ -64,3 +64,12 @@ A camada Silver também passa por uma etapa de Data Quality, na qual algumas val
 
 
 > Os diagramas apresentados podem ser gerados no [dbdiagram.io](https://dbdiagram.io/home) usando o arquivo [tables_diagram_silver_gold.txt](./tables_diagram_silver_gold.txt).
+
+
+##  Dashboard do Power BI 
+
+
+https://github.com/caiombribeiro/ada_big_data/assets/83843974/f7707944-be25-45b4-b14d-35f4a47ca384
+
+
+
